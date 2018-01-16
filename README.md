@@ -51,6 +51,32 @@ the *helmbrigade.yaml*
 $ brig run lukepatrick/HelmBrigade
 ```
 
+### Slack Demo
+Set up the Slack Environment:
+```bash
+$ helm upgrade helmbrigade brigade/brigade-project --set secrets.SLACK_WEBHOOK=https://slack.secret.url
+```
+or at install time:
+```bash
+$ helm install --name helmbrigade brigade/brigade-project -f helmbrigade.yaml --set secrets.SLACK_WEBHOOK=https://slack.secret.url
+```
+
+Edit the slack.js ENV settings for your desired username, title, message, channel, etc..:
+```javascript
+  slack.env = {
+    SLACK_WEBHOOK: p.secrets.SLACK_WEBHOOK,
+    SLACK_USERNAME: "brigade-bot",
+    SLACK_TITLE: "Hello World!",
+    SLACK_MESSAGE: "It's all Kubernetes from here",
+    SLACK_COLOR: "#0000ff",
+    SLACK_CHANNEL: "general"
+  }
+```
+
+Manually run the project and override the input script.
+```bash
+$ brig run lukepatrick/HelmBrigade -f slack.js
+```
 
 ## Contribute
 
