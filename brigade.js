@@ -35,8 +35,8 @@ events.on("exec", (e, p) => {
   helm_job.tasks.push("ls /src") // add first task
   helm_job.tasks.push("helm ls") 
   //helm_job.tasks.push("helm repo list") // doesn't work, wrong user scope and host filesystem
-  helm_job.tasks.push("helm delete --purge glance") // works
-
+  //helm_job.tasks.push("helm delete --purge glance") // works
+  helm_job.tasks.push("helm status horizon")
 
   //set up ENV
   // helm_job.env = helm_job.env = {
@@ -56,7 +56,6 @@ events.on("exec", (e, p) => {
     console.log("==> Start Job Results")
     console.log(resultStart.toString())
     console.log("==> Start Job Done")
-    console.log("==> Running Push Job")
     })
 
 })
