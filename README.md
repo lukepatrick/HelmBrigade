@@ -52,6 +52,8 @@ $ brig run lukepatrick/HelmBrigade
 ```
 
 ### Slack Demo
+Get a [Slack Webhook](https://api.slack.com/incoming-webhooks)
+
 Set up the Slack Environment:
 ```bash
 $ helm upgrade helmbrigade brigade/brigade-project --set secrets.SLACK_WEBHOOK=https://slack.secret.url
